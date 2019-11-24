@@ -7,11 +7,10 @@
 **OS:** macOS 10.12.6  
 
 ## Myself 
-> Hello all! I recently graduated from Flatiron School for Full Stack Web Development.  
-> I am currently taking courses on the [OSSU self-taught CS path](https://github.com/ossu/computer-science).
+> Hello all! I recently graduated from Flatiron School for Full Stack Web Development and I am also currently a Computer Sci student.
+
 
 ![Flatiron School](https://static.spacecrafted.com/cb0d364909d24dda9229292f57656d38/i/fbd2301ca5704943ae527ffae4477ffe/1/HeFQid7LQXgcb94xoFfcAXGjoNdCp8TJdfJQL/Flatiron.png)
-![OSSU](https://camo.githubusercontent.com/ab1e7ce255025d6c6b9431d43409217c21f70b6a/687474703a2f2f692e696d6775722e636f6d2f6b5959435874432e706e67)
 
 **Languages** 
   * English 
