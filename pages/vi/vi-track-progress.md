@@ -2,7 +2,7 @@
 ## Directions: ##        
  * Click on the blue "Get PRs/Issues Count" button below.
  * Type in a valid Github username
- * Remember, in order to complete the ["First Steps"](vi-first-steps.md) you need at least 5 PRs and 4 issues.
+ * Remember, in order to complete the ["First Steps"](vi-first-steps.md) you need at least 5 valid PRs and 4 issues.
  * Click [here](vi-first-steps.md#Step_8_-_Create_Issues_and_Pull_Requests) to return to Step 8.
 
 <style><!--
@@ -50,7 +50,7 @@
                 .catch(function(error) {
                     console.log(error);
                     let p = document.createElement('p');
-                    p.innerHTML = "<span style='color:#FF0000;'><strong><u>ERROR</u>: User " + user + " does not exists.</strong></span>";
+                    p.innerHTML = "<span style='color:#FF0000;'><strong><u>Error</u>: " + user + " is not a valid GitHub Username. Make sure you are entering a valid GitHub Username.</strong></span>";
                     res.appendChild(p);
                 });
         } else {

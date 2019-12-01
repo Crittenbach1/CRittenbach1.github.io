@@ -14,16 +14,16 @@ Typically, interns choose what project they want to work on based on their exper
 
 #### Active Projects
 
-* [`planet`](rbts-angular.md)
+* [Planet](rbts-angular.md)
   * A Progressive Web App using Angular & CouchDB with the BeLL Apps functionality.
 * [Takeout](rbts-takeout.md)
-  * Takeout is an Android port of the `planet` apps.
+  * Takeout is an Android port of the Planet apps.
 * [Remote](https://github.com/treehouses/remote/)
   * An Android app that communicates with headless Raspberry Pi mobile server running treehouses image via Bluetooth.
 * [Raspberry Pi](rbts-raspberry-pi.md)
   * The modified Raspbian image can be placed on a microsd card for deployment in the field with a Raspberry Pi.
 * [Docker](https://hub.docker.com/r/treehouses/) <!--replace link to rbts-docker.md once PR #1384 is finished-->
-  * Containerize CouchDB, `planet`, BeLL, and other educational applications
+  * Containerize CouchDB, Planet, BeLL, and other educational applications
 
 [Past Projects](rbts-past-projects.md)
 
@@ -70,12 +70,6 @@ When you are ready to merge the pull request:
 
 Every time you merge a pull request, message the author on [Gitter chat](https://gitter.im/open-learning-exchange/chat), make sure you include a link to the pull request and commit id.
 
-### Using Waffle.io
-
-[Waffle.io](https://waffle.io/ole-vi) is what OLE uses to manage some of our projects. It's another way to view the projects that you and your team need to work on and review. You will be automatically added to the Waffle.io page once you become a member of ole-vi GitHub organization.
-
-Choose issues to work on out of the `Ready` column and assign them to yourself. Move them to the `In Progress` column when you start working on them. Make sure you link the pull requests to their issues by mentioning them in the pull request title. E.g. "(fixes #54)".
-
 ### Standup Message
 
 Every time you work on OLE projects and issues, you should post the "[stand-up](https://en.wikipedia.org/wiki/Stand-up_meeting)" message in [our Gitter standup room](https://gitter.im/open-learning-exchange/standup) before you start working. Use the following format:
@@ -101,7 +95,6 @@ While you are free to work in your own style, we recommend you follow this basic
 
 * Check Gitter interns room and your Gitter private messages.
 * Join the [OLE Google Hangouts session](http://talk.ole.org) if you are able to, so you can follow what everyone is working on and get help fast.
-* Check Waffle.io, if you have no issues assigned, assign yourself to issues relating to the project you wish to work on.
 * Write a message in [Gitter standup room](https://gitter.im/open-learning-exchange/standup) with the format mentioned above.
 * Review any issues or pull requests that have been added or changed on [open-learning-exchange.github.io](https://github.com/open-learning-exchange/open-learning-exchange.github.io) since last time you reviewed.
 * Work on your issues and write in intern chat any time you run into problems.
@@ -122,8 +115,15 @@ Every Monday at the "[Happy hacking hangout](http://talk.ole.org)" session, we w
 
 Please subscribe to our calendar:
 
-* In [Google Calendar](https://calendar.google.com/), paste `ole.org_u2koassrool56icb7fqko9abac@group.calendar.google.com` into "*Add a friend's calendar*" and **hit `Enter` (do not click the + sign)**.
-* Use [this iCalendar file](https://calendar.google.com/calendar/ical/ole.org_u2koassrool56icb7fqko9abac%40group.calendar.google.com/public/basic.ics) to access our calendar from other applications.
+* In [Google Calendar](https://calendar.google.com/), click on the **+** sign next to the **Other calendars** section on the left side as seen in the screenshot below. Select **Subscribe to calendar** from the dropdown
+
+![Google Calendar subscribe to OLE calendar](images/rbts-orientation-google-calendar.jpg)
+
+* Paste `ole.org_u2koassrool56icb7fqko9abac@group.calendar.google.com` under "Add calendar" and hit `Enter` as seen in the screenshot below
+
+![Google Calendar subscribe to OLE calendar](images/rbts-orientation-google-calendar-2.jpg)
+
+* Use [this iCalendar file](https://calendar.google.com/calendar/ical/ole.org_u2koassrool56icb7fqko9abac%40group.calendar.google.com/public/basic.ics) to access our calendar from other applications
 
 ![Google Calendar add a friend's calendar](images/rbts-orientation-add-calendar.png)
 

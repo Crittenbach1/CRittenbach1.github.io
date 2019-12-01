@@ -1,13 +1,12 @@
-# Docker Tutorial
+﻿# Docker Tutorial
 
 ## Objectives
 
 - Learn about Docker and Docker Compose
+- Learn about running Planet with Docker
 - Learn Docker and Docker Compose commands
 
 ## Introduction
-
-In the previous section, you installed Docker to your machine.
 
 **[Docker](https://www.docker.com/what-docker)** is a computer program that performs operating-system-level virtualization also known as containerization. In this section, you will learn the basics of interacting with Docker and Docker Compose through the command-line interface.
 
@@ -30,13 +29,13 @@ Compose is a tool for defining and running multi-container Docker applications. 
 
 Now, take a look at [the YAML file for planet](https://github.com/open-learning-exchange/planet/blob/master/docker/planet.yml). There are 3 services in planet's docker-compose YAML file:
 
-- `planet` – our production optimized `planet` that's served via Nginx
+- `planet` – our production optimized `planet` that's served via [Nginx](https://kinsta.com/knowledgebase/what-is-nginx/)
 - `couchdb` – a CouchDB container
 - `db-init` – CouchDB initialization data, it contains all the schema necessary for our `planet` to run.
 
 Below you'll find a few common `docker-compose` commands you would need throughout working with `planet` (the following examples assumes you are in planet repo's docker folder):
 
-- `docker-compose -f planet.yml -p planet up -d --build` – spawn your environment for the *first time*
+- `docker-compose -f planet.yml -p planet up -d` – spawn your environment for the *first time*
   - `-f` – specify an alternate compose file (default: docker-compose.yml)
   - `-p` – specify a project name (default: directory name)
   - `up -d ` - create and start containers in the background
@@ -49,7 +48,49 @@ Below you'll find a few common `docker-compose` commands you would need througho
 
 - `docker-compose -f planet.yml -p planet down` – stops containers and removes containers, networks, volumes, and images created
 
+## Docker & Planet
+
+In the [previous step]( http://open-learning-exchange.github.io/#!./pages/vi/vi-planet-installation-vagrant.md) when you ran `vagrant up prod` Docker is set up to run Planet automatically. Below are the steps to install Planet manually, which can also be used to upgrade to the latest version of Planet.
+
+1. Go to your OLE project folder, and use `cd planet` to enter into the `planet` directory. This is the repository you cloned in the [previous step]( http://open-learning-exchange.github.io/#!./pages/vi/vi-planet-installation-vagrant.md)
+
+2. Use `vagrant ssh prod` to connect to your virtual machine
+
+3. Then enter into the docker folder with `cd /vagrant/docker`.
+
+4. Pull the latest `planet` and its db-init Docker image
+
+  - `docker pull treehouses/planet:latest`
+  - `docker pull treehouses/planet:db-init`
+
+  - `docker tag treehouses/planet:latest treehouses/planet:local`
+  - `docker tag treehouses/planet:db-init treehouses/planet:db-init-local`
+  
+5. Run the *following command* to spawn your environment for the **first time**:
+
+    
+WARNING: If you followed Step1 and configured Planet, you should not run `docker-compose -f planet.yml -p planet up -d`. It might destroy your configuration. `vagrant up prod` runs `docker-compose -f planet.yml -p planet up -d` automatically. If you are in this situation, look at the ** [Second and third element of Troubleshooting in this page]( https://open-learning-exchange.github.io/#!./pages/vi/vi-configurations-vagrant.md#Troubleshooting)** 
+    
+    If this is your **first** time spawning the environment, run:
+   
+  `docker-compose -f planet.yml -p planet up -d`
+
+
+1. See if the docker containers are running: `docker ps -a`. You'll see your running container similar to this
+
+    ```
+    CONTAINER ID        IMAGE                       COMMAND                  CREATED             STATUS                      PORTS                                        NAMES
+    6ad5d3f2ba2b        treehouses/planet:latest    "/bin/sh -c 'sh ./do…"   38 seconds ago      Up 46 seconds               0.0.0.0:80->80/tcp                           planet_planet_1
+    e78eb9287454        treehouses/planet:db-init   "/bin/sh -c 'bash ./…"   38 seconds ago      Exited (0) 34 seconds ago                                                planet_db-init_1
+    3c2309e92dc6        treehouses/couchdb:2.1.1    "tini -- /docker-ent…"   39 seconds ago      Up 48 seconds               4369/tcp, 9100/tcp, 0.0.0.0:2200->5984/tcp   planet_couchdb_1
+    ```
+
+1. See log in action with `docker-compose -f planet.yml -p planet logs -f`, press 'CTRL+C' to exit logs view
+
+
 ## More about Docker and Docker Compose
+
+We install and run Docker and Docker Compose from the Vagrant virtual machine because it is quicker to get everyone up and running and easier to troubleshoot as issues come up. Docker can also be installed directly on your machine. If you are curious about how to install Docker you can [read our guide](vi-docker-installation.md). We do **not recommend** running Planet this way because we may **not be able to help** if there are issues.
 
 We suggest you to look at [Docker CLI's reference](https://docs.docker.com/engine/reference/commandline/cli/) and [docker-compose CLI's reference](https://docs.docker.com/compose/reference/overview/) to find out more about their commands and usage.
 
@@ -221,5 +262,18 @@ Commands:
   up                 Create and start containers
   version            Show the Docker-Compose version information
 ```
+
+## Useful Links
+
+[What is Docker?](https://www.docker.com/what-docker)
+[Docker Concepts](https://docs.docker.com/get-started/#docker-concepts)
+[Docker Overview](https://docs.docker.com/engine/docker-overview/)
+[Docker Compose](https://docs.docker.com/compose/overview/)
+[Docker CLI Command](https://docs.docker.com/engine/reference/commandline/cli/)
+[Docker Installation](http://open-learning-exchange.github.io/#!./pages/vi/vi-docker-installation.md)
+
+## Next Section _([Step 3](vi-github-and-markdown.md))_ **→**
+
+Markdown is a lightweight markup language with plain text formatting syntax. In the next section, you will learn Markdown to create a profile page, and learn how to create a pull request.
 
 #### Return to [First Steps](vi-first-steps.md#Step_2_-_Planet_and_Docker)

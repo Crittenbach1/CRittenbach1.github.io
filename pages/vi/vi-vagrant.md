@@ -7,32 +7,35 @@
 
 ## Introduction
 
-In [Step 1 - Planet Installation with vagrant](vi-planet-installation.md), we installed Vagrant, VirtualBox, Git, and Planet to our OS.
+In [Step 1 - Planet Installation with vagrant](vi-planet-installation-vagrant.md), we installed Vagrant, VirtualBox, Git, and Planet to our OS.
 
-**[Vagrant](https://www.vagrantup.com/) is an open-source software product for building and maintaining portable virtual software development environments.** Below, you will find some basic instruction on interacting with Vagrant through the command-line interface (CLI). You should be familiar with this since you will need to use it to control virtual machines during your internship.
+**[Vagrant](https://www.vagrantup.com/) is an open-source software product for building and maintaining portable virtual software development environments.** Below, you will find some basic instructions on interacting with Vagrant through the command-line interface (CLI). You should be familiar with this since you will need to use it to control virtual machines during your internship.
 
 ## Preparation
 
-#### Windows – Pick your command line program
+#### Windows – Pick your command-line program
 
-There are three command line programs you could use to interact with Vagrant CLI:
+There are three command-line programs you could use to interact with Vagrant CLI:
 
-1. **Git Bash**: This is our recommended command line program. GitBash is already installed along with planet installation script. After you open **Git Bash**, you will find its default directory at `C:\Users\YOUR_USERNAME`.
+1. **Git Bash**: This is our recommended command line program. **Git Bash** is already installed along with planet installation script. After you open **Git Bash**, you will find its default directory at `C:/Users/YOUR_USERNAME`.
 
-2. **Command Prompt**: There are two Command Prompt options on Windows: **Command Prompt** and **Command Prompt(Admin)**. You could use either of them to access directories and interact with Vagrant CLI. The only difference is their default directory: **Command Prompt(Admin)** has `C:\Windows\system32` as default directory and **Command Prompt** has `C:\Users\YOUR_USERNAME` as default directory.
+2. **Command Prompt**: There are two Command Prompt options on Windows: **Command Prompt** and **Command Prompt(Admin)**. You could use either of them to access directories and interact with Vagrant CLI. The only difference is their default directory: **Command Prompt(Admin)** has `C:\Windows\system32` as default directory and **Command Prompt** has `C:\Users\YOUR_USERNAME` as the default directory.
 
-2. **Windows PowerShell**: Windows PowerShell is a default shell interface installed on your machine, its default directory is `C:\Users\YOUR_USERNAME`.
+3. **Windows PowerShell**: Windows PowerShell is a default shell interface installed on your machine, its default directory is `C:\Users\YOUR_USERNAME`.
+
+**NOTE**: PowerShell and Command Prompt users will have to substitute forward slashes “/” with backslashes “\” throughout these introductory steps as it pertains to file paths.  
+Example: If you see an instruction saying `cd desktop/OLE/Planet` instead use `cd desktop\OLE\Planet`.
 
 #### macOS or Ubuntu - Terminal
 
 Normally we use Terminal to interact with Vagrant CLI.
 
-## Stay at the Right Directory
+## Stay in the Right Directory
 
-A lot of Vagrant commands require us to specify a target machine or run from a directory with target machine's Vagrantfile, otherwise you might encounter error like "A Vagrant environment or target machine is required." Please go to the directory that contains our Vagrantfile:
+A lot of Vagrant commands require us to specify a target machine. We can also run those commands from a directory with the target machine’s Vagrant File. Otherwise, you may encounter an error like "A Vagrant environment or target machine is required." Please go to the directory that contains our Vagrant file:
 
-- Windows user: `cd C:\Users\YOUR_USERNAME\planet`
-- macOS or Linux  user: `cd` to where you `git clone` the `planet` repository in Step 1 - Planet Installation
+- Windows users should: `cd C:\Users\YOUR_USERNAME\Desktop\OLE\planet`.
+- macOS or Linux users should: `cd` into the location where they ran `git clone` to copy the `planet` repository back in Step 1 - Planet Installation.
 
 ## Global Status
 
@@ -41,7 +44,7 @@ A lot of Vagrant commands require us to specify a target machine or run from a d
 ```
 id       name   provider   state   directory
 ---------------------------------------------------------------------------
-219abaa  dev     virtualbox running /Users/aberdean/planet
+219abaa  prod     virtualbox running /Users/aberdean/planet
 
 The above shows information about all known Vagrant environments
 on this machine. This data is cached and may not be completely
@@ -52,6 +55,7 @@ with Vagrant commands from any directory. For example:
 ```
 
 The above output tells us:
+
 - We have a Vagrant virtual machine called `prod` running in VirtualBox.
 - The directory of the virtual machine's Vagrantfile is located at `/Users/aberdean/planet`.
 
@@ -117,5 +121,9 @@ or not commonly used. To see all subcommands, run the command
 [Vagrant download](https://www.vagrantup.com/downloads.html)
 [Wikipedia page on Vagrant](https://en.wikipedia.org/wiki/Vagrant_%28software%29)
 [Other helpful links and videos](vi-faq.md#Helpful_Links)
+
+## Next Section _([Step 2](vi-docker-tutorial.md))_ **→**
+
+Docker is a computer program that performs operating-system-level virtualization also known as containerization. In the next section, you will learn the basics of interacting with Docker and Docker Compose through the command-line interface and basic commands for maintaining your Planet installation.
 
 #### Return to [First Steps](vi-first-steps.md#Step_1_-_Planet_and_Vagrant)
